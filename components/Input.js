@@ -41,8 +41,10 @@ export const Input = ({
         {/* input */}
         <input
           placeholder={placeholder}
-          className={`focus:outline-none pl-24 border border-[#DFDFDF] py-2.5 rounded-lg w-full ${
-            !disabled && `hover:border-[#99C2C1]  focus:border-[#338583]`
+          className={`focus:outline-none border border-[#DFDFDF] py-2.5 rounded-lg w-full ${
+            disabled
+              ? `pl-16`
+              : `pl-24 hover:border-[#99C2C1]  focus:border-[#338583]`
           }`}
           type="text"
           onChange={(e) => onChange(e.target.value)}
