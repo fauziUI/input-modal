@@ -14,7 +14,7 @@ export const Input = ({
   const [simbol, setSimbol] = useState(0);
 
   return (
-    <div className="w-full max-w-xs py-2">
+    <div className="w-full max-w-lg py-2">
       {/* title */}
       <div className="flex items-center py-2">
         <span className="text-[#1A2128] font-medium">{titel}</span>
@@ -48,6 +48,7 @@ export const Input = ({
           }`}
           type="text"
           onChange={(e) => onChange(e.target.value)}
+          onClick={() => setDropDown(false)}
           value={value}
           disabled={disabled}
         />
