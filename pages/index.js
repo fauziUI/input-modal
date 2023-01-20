@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Input } from "../components/Input";
 import { Dropdown } from "../components/Dropdown";
+import { Modal } from "../components/Modal";
 
 export default function Home() {
   const [value, setValue] = useState("");
   const [valueDropdown, setValueDropdown] = useState("");
   const [valueDropdownDanger, setValueDropdownDanger] = useState("");
   const [valueDropdownMultiple, setValueDropdownMultiple] = useState("");
+
+  const [showModal, setShowModal] = useState("");
 
   return (
     <>
@@ -89,6 +92,97 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <div className="md:flex justify-around underline text-blue-500 cursor-pointer py-4">
+        <div
+          onClick={() => setShowModal("modalSukses")}
+          className="hover:scale-105"
+        >
+          1. Test Modal Sukses
+        </div>
+        <div
+          onClick={() => setShowModal("modalAlert")}
+          className="hover:scale-105"
+        >
+          2. Test Modal Alert
+        </div>
+        <div
+          onClick={() => setShowModal("modalInfo")}
+          className="hover:scale-105"
+        >
+          3. Test Modal Info
+        </div>
+        <div
+          onClick={() => setShowModal("modalDanger")}
+          className="hover:scale-105"
+        >
+          4. Test Modal Danger
+        </div>
+      </div>
+
+      <Modal
+        shown={showModal === "modalSukses"}
+        close={() => setShowModal("")}
+        type="success"
+        titel="Dialog Title"
+        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos."
+        link="https://juraganmaterial.id/reset/fghjk7827hrhrjj3"
+        button1="Label"
+        button2="Label"
+        button3="Label"
+        click={() => setShowModal("")}
+      />
+
+      <Modal
+        shown={showModal === "modalAlert"}
+        close={() => setShowModal("")}
+        type="alert"
+        titel="Dialog Title"
+        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos."
+        link="https://juraganmaterial.id/reset/fghjk7827hrhrjj3"
+        button1="Label"
+        button2="Label"
+        button3="Label"
+        click={() => setShowModal("")}
+      />
+
+      <Modal
+        shown={showModal === "modalInfo"}
+        close={() => setShowModal("")}
+        type="info"
+        titel="Dialog Title"
+        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos."
+        link="https://juraganmaterial.id/reset/fghjk7827hrhrjj3"
+        button1="Label"
+        button2="Label"
+        button3="Label"
+        click={() => setShowModal("")}
+      />
+
+      <Modal
+        shown={showModal === "modalDanger"}
+        close={() => setShowModal("")}
+        type="danger"
+        titel="Dialog Title"
+        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos."
+        link="https://juraganmaterial.id/reset/fghjk7827hrhrjj3"
+        button1="Label"
+        button2="Label"
+        button3="Label"
+        click={() => setShowModal("")}
+      />
     </>
   );
 }
