@@ -104,7 +104,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:flex justify-around underline text-blue-500 cursor-pointer py-4">
+      <div className="md:flex justify-around underline text-blue-500 cursor-pointer p-4">
         <div
           onClick={() => setShowModal("modalSukses")}
           className="hover:scale-105"
