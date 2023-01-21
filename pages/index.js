@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Input } from "../components/Input";
 import { Dropdown } from "../components/Dropdown";
 import { Modal } from "../components/Modal";
+import { Attachment } from "../components/Attachment";
 
 export default function Home() {
   const [value, setValue] = useState("");
   const [valueDropdown, setValueDropdown] = useState("");
   const [valueDropdownDanger, setValueDropdownDanger] = useState("");
   const [valueDropdownMultiple, setValueDropdownMultiple] = useState("");
+  const [valueFile, setValueFile] = useState(null);
 
   const [showModal, setShowModal] = useState("");
 
@@ -89,6 +91,15 @@ export default function Home() {
             placeholder="Input placeholder"
             helper="Input helper text"
             disabled
+          />
+
+          <Attachment
+            titel="Label"
+            required
+            placeholder="Input placeholder"
+            onChange={setValueFile}
+            value={valueFile}
+            helper="Input helper text"
           />
         </div>
       </div>

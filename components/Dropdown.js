@@ -25,7 +25,10 @@ export const Dropdown = ({
   return (
     <div className="w-full max-w-lg py-2">
       {/* title */}
-      <div className="flex items-center py-2">
+      <label
+        htmlFor={`input_dropdown_${danger}_${multiple}_${titel}`}
+        className="flex items-center py-2"
+      >
         <span className="text-[#1A2128] font-medium">{titel}</span>
         {required && <span className="text-[#A74032] font-medium">*</span>}
         <span className="px-1">
@@ -43,12 +46,13 @@ export const Dropdown = ({
             />
           </svg>
         </span>
-      </div>
+      </label>
 
       {/* input section */}
       <div className="relative">
         {/* input */}
         <input
+          id={`input_dropdown_${danger}_${multiple}_${titel}`}
           onClick={() => setDropDown(!dropDown)}
           placeholder={placeholder}
           className={`disabled:bg-[#F7F7F7] disabled:border-[#E1E1E1] focus:outline-none pl-12 border border-[#DFDFDF] py-2.5 rounded-lg w-full ${
